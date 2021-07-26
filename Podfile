@@ -8,5 +8,6 @@ target 'Player' do
   # Pods for Player
 
   pod 'Alamofire', '~> 5.4'
+  pod 'SDWebImage'
 
 end

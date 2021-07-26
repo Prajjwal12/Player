@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xmg-3m-VGX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Songs-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SongsListViewController" customModule="Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="c5s-XU-vfo">
+                                <rect key="frame" x="172" y="413" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="L9g-eh-XiI"/>
+                                    <constraint firstAttribute="width" constant="70" id="vcS-EA-v9L"/>
+                                </constraints>
+                                <color key="color" systemColor="tertiarySystemBackgroundColor"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruF-wY-g6c">
+                                <rect key="frame" x="0.0" y="483" width="414" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2oH-GG-Mnx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R5x-pf-mOB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="W60-0M-boU"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bAg-7d-Kp0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="list_background"/>
+                        <constraints>
+                            <constraint firstItem="c5s-XU-vfo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2aZ-vg-46V"/>
+                            <constraint firstItem="R5x-pf-mOB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BiO-ph-zES"/>
+                            <constraint firstItem="R5x-pf-mOB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MNq-vG-cTf"/>
+                            <constraint firstItem="R5x-pf-mOB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="amp-dw-RV0"/>
+                            <constraint firstItem="ruF-wY-g6c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bki-iE-O5J"/>
+                            <constraint firstItem="ruF-wY-g6c" firstAttribute="top" secondItem="c5s-XU-vfo" secondAttribute="bottom" id="edx-b3-lrG"/>
+                            <constraint firstItem="c5s-XU-vfo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="psb-Xk-CxF"/>
+                            <constraint firstItem="R5x-pf-mOB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="q9h-q6-CFT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ruF-wY-g6c" secondAttribute="trailing" id="yk3-Oe-Mgh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Songs" id="Mmv-Yb-a4i"/>
+                    <connections>
+                        <outlet property="activityView" destination="c5s-XU-vfo" id="oaL-7V-Lkx"/>
+                        <outlet property="activityViewLabel" destination="ruF-wY-g6c" id="N9I-N1-pX1"/>
+                        <outlet property="tableView" destination="R5x-pf-mOB" id="B5y-Ms-bwi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860.86956521739137" y="87.723214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fXu-2f-lk6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xmg-3m-VGX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="GVD-1k-Ltt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Uhk-Em-Gzs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4N-vW-oic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-235" y="117"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="list_background">
+            <color red="0.57400000095367432" green="0.57400000095367432" blue="0.57400000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
