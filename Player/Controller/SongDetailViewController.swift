@@ -88,6 +88,8 @@ extension SongDetailViewController : UITableViewDelegate, UITableViewDataSource 
             cell.whereToGo.text = "Where to go from here?"
             cell.artistViewUrl.text =  songDetails.artistViewUrl
             cell.collectionViewUrl.text = songDetails.collectionViewUrl
+            
+            
             return cell
             
         }
