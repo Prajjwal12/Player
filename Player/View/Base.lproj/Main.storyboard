@@ -62,7 +62,7 @@
                         <outlet property="activityView" destination="c5s-XU-vfo" id="oaL-7V-Lkx"/>
                         <outlet property="activityViewLabel" destination="ruF-wY-g6c" id="N9I-N1-pX1"/>
                         <outlet property="tableView" destination="R5x-pf-mOB" id="B5y-Ms-bwi"/>
-                        <segue destination="R5S-Bq-15C" kind="show" identifier="songDetail" id="sab-Of-ICw"/>
+                        <segue destination="R5S-Bq-15C" kind="presentation" identifier="songDetail" id="9Fs-0O-Mgj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,11 +74,11 @@
             <objects>
                 <viewController id="R5S-Bq-15C" customClass="SongDetailViewController" customModule="Player" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZs-78-iVu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-la-owU">
-                                <rect key="frame" x="0.0" y="88" width="414" height="746"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="780"/>
                                 <color key="backgroundColor" name="list_background2"/>
                                 <connections>
                                     <outlet property="dataSource" destination="R5S-Bq-15C" id="Hsn-W4-Pze"/>
@@ -86,7 +86,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2009 Hachette Audio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcB-FT-cBz">
-                                <rect key="frame" x="0.0" y="842" width="414" height="20"/>
+                                <rect key="frame" x="0.0" y="788" width="414" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="eKh-RC-Lmx"/>
                                 </constraints>
