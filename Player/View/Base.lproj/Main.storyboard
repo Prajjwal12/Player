@@ -62,11 +62,60 @@
                         <outlet property="activityView" destination="c5s-XU-vfo" id="oaL-7V-Lkx"/>
                         <outlet property="activityViewLabel" destination="ruF-wY-g6c" id="N9I-N1-pX1"/>
                         <outlet property="tableView" destination="R5x-pf-mOB" id="B5y-Ms-bwi"/>
+                        <segue destination="R5S-Bq-15C" kind="presentation" identifier="songDetail" id="N66-ab-WMs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="860.86956521739137" y="87.723214285714278"/>
+        </scene>
+        <!--Song Detail View Controller-->
+        <scene sceneID="ZYP-HJ-dvy">
+            <objects>
+                <viewController id="R5S-Bq-15C" customClass="SongDetailViewController" customModule="Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZs-78-iVu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-la-owU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="780"/>
+                                <color key="backgroundColor" name="list_background2"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="R5S-Bq-15C" id="Hsn-W4-Pze"/>
+                                    <outlet property="delegate" destination="R5S-Bq-15C" id="P8H-Ar-F1L"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2009 Hachette Audio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcB-FT-cBz">
+                                <rect key="frame" x="0.0" y="788" width="414" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="eKh-RC-Lmx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="K2P-u0-qtV"/>
+                        <color key="backgroundColor" name="list_background2"/>
+                        <constraints>
+                            <constraint firstItem="DcB-FT-cBz" firstAttribute="bottom" secondItem="K2P-u0-qtV" secondAttribute="bottom" id="5aO-LT-070"/>
+                            <constraint firstItem="yAh-la-owU" firstAttribute="top" secondItem="K2P-u0-qtV" secondAttribute="top" id="7g6-2o-OD4"/>
+                            <constraint firstItem="DcB-FT-cBz" firstAttribute="top" secondItem="yAh-la-owU" secondAttribute="bottom" constant="8" id="Y4o-Z3-d0T"/>
+                            <constraint firstItem="DcB-FT-cBz" firstAttribute="leading" secondItem="K2P-u0-qtV" secondAttribute="leading" id="f1f-Wg-8s1"/>
+                            <constraint firstItem="yAh-la-owU" firstAttribute="leading" secondItem="K2P-u0-qtV" secondAttribute="leading" id="we1-Bz-I1g"/>
+                            <constraint firstItem="yAh-la-owU" firstAttribute="trailing" secondItem="K2P-u0-qtV" secondAttribute="trailing" id="xAa-EH-ZIb"/>
+                            <constraint firstItem="DcB-FT-cBz" firstAttribute="trailing" secondItem="K2P-u0-qtV" secondAttribute="trailing" id="xKc-i4-xUe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uxM-Dx-kDE"/>
+                    <connections>
+                        <outlet property="copyrightLabel" destination="DcB-FT-cBz" id="Efo-bE-IKV"/>
+                        <outlet property="tableView" destination="yAh-la-owU" id="X5i-ya-5a1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nx7-c7-m8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1724.6376811594205" y="87.723214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fXu-2f-lk6">
@@ -89,13 +138,19 @@
     </scenes>
     <resources>
         <namedColor name="list_background">
-            <color red="0.57400000095367432" green="0.57400000095367432" blue="0.57400000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="list_background2">
+            <color red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

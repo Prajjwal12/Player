@@ -12,6 +12,8 @@ import SDWebImage
 class SongsListViewController: UIViewController {
 
     var songs : Songs!
+    var songDetail : SongsResult!
+    let songDetailSegueIdentifier = "songDetail"
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var activityViewLabel: UILabel!
     let refreshControl = UIRefreshControl()
@@ -28,7 +30,7 @@ class SongsListViewController: UIViewController {
         
         
         self.tableView.register(SongTileTableViewCell.self, forCellReuseIdentifier: "SongTileTableViewCell")
-        self.tableView.backgroundColor = UIColor(named: "list_background")
+        self.tableView.backgroundColor = UIColor(named: "list_background2")
         self.tableView.separatorStyle = .none
         self.tableView.isHidden = true
         self.tableView.addSubview(refreshControl)
@@ -145,6 +147,16 @@ extension SongsListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        songDetail = songs.results![indexPath.row]
+        self.performSegue(withIdentifier: songDetailSegueIdentifier, sender: self)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == songDetailSegueIdentifier {
+            let destinationVc = segue.destination as! SongDetailViewController
+            destinationVc.songDetails = songDetail
+        }
+    }
+    
 }
